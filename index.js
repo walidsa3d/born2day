@@ -58,25 +58,23 @@ async function getBirthdayInfo(date) {
 
     // Get day of the week
     const dayOfWeek = DAYS[birthDate.getDay()];
-    console.log(dayOfWeek);
+    
     // Get zodiac sign, Chinese zodiac, and age
     const zodiacSign = getZodiacSign(day, month);
     const chineseZodiac = getChineseZodiac(year);
     const age = calculateAge(birthDate);
 
+    // Display results
+    console.log(chalk.bold.blue('🎂 Birthday Insights 🎂'));
+    console.log(chalk.green('Date of Birth:'), chalk.yellow(date));
+    console.log(chalk.green('Day of the Week:'), chalk.yellow(dayOfWeek));
+    console.log(chalk.green('Zodiac Sign:'), chalk.yellow(zodiacSign));
+    console.log(chalk.green('Chinese Zodiac:'), chalk.yellow(chineseZodiac));
+    console.log(chalk.green('Age:'), chalk.yellow(age));
+
   } catch (error) {
     console.error(chalk.red('Error fetching birthday information:'), error.message);
   }
-   // Display results
-   console.log(chalk.bold.blue('🎂 Birthday Insights 🎂'));
-   console.log(chalk.green('Date of Birth:'), chalk.yellow(date));
-   console.log(chalk.green('Day of the Week:'), chalk.yellow(dayOfWeek));
-   console.log(chalk.green('Zodiac Sign:'), chalk.yellow(zodiacSign));
-   console.log(chalk.green('Chinese Zodiac:'), chalk.yellow(chineseZodiac));
-   console.log(chalk.green('Age:'), chalk.yellow(age));
-
-  //  console.log(chalk.yellow('\nHistorical Events:'));
-  //  console.log(chalk.white(pageContent));
 }
 
 program
