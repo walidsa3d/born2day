@@ -42,6 +42,17 @@ function calculateAge(birthDate) {
   return age;
 }
 
+function displayResults(date, dayOfWeek, zodiacSign, chineseZodiac, age) {
+  console.log(chalk.bold.blue('\n🎂 Birthday Insights 🎂'));
+  console.log('━'.repeat(40));
+  console.log(chalk.green('📅 Date of Birth:    '), chalk.yellow(date));
+  console.log(chalk.green('📆 Day of the Week:  '), chalk.yellow(dayOfWeek));
+  console.log(chalk.green('⭐ Zodiac Sign:      '), chalk.yellow(zodiacSign));
+  console.log(chalk.green('🏮 Chinese Zodiac:   '), chalk.yellow(chineseZodiac));
+  console.log(chalk.green('🎈 Age:              '), chalk.yellow(age));
+  console.log('━'.repeat(40));
+}
+
 async function getBirthdayInfo(date) {
   try {
     const [day, month, year] = date.split('/').map(Number);
@@ -64,13 +75,8 @@ async function getBirthdayInfo(date) {
     const chineseZodiac = getChineseZodiac(year);
     const age = calculateAge(birthDate);
 
-    // Display results
-    console.log(chalk.bold.blue('🎂 Birthday Insights 🎂'));
-    console.log(chalk.green('Date of Birth:'), chalk.yellow(date));
-    console.log(chalk.green('Day of the Week:'), chalk.yellow(dayOfWeek));
-    console.log(chalk.green('Zodiac Sign:'), chalk.yellow(zodiacSign));
-    console.log(chalk.green('Chinese Zodiac:'), chalk.yellow(chineseZodiac));
-    console.log(chalk.green('Age:'), chalk.yellow(age));
+    // Display results using the new display function
+    displayResults(date, dayOfWeek, zodiacSign, chineseZodiac, age);
 
   } catch (error) {
     console.error(chalk.red('Error fetching birthday information:'), error.message);
