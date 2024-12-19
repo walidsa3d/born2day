@@ -61,7 +61,7 @@ born2day [options] <date>
 1. **Date Parsing**: Takes your input date and validates it.
 2. **Day Calculation**: Determines the day of the week using algorithms.
 3. **Zodiac Detection**: Matches your date to the zodiac sign.
-4. **Age**: The curren age of the person.
+4. **Age**: The current age of the person.
 
 ---
 
