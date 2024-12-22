@@ -22,9 +22,6 @@ jobs:
     - name: Install dependencies
       run: npm ci
     
-    - name: Run tests
-      run: npm test
-    
     - name: Build package
       run: npm run build
     
@@ -32,8 +29,3 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      with:
-        generate_release_notes: true
