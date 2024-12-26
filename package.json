@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "build": "mkdir -p dist && cp src/index.js dist/",
+    "build": "mkdir -p dist && cp src/* dist/",
     "dev": "node src/index.js",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
