@@ -5,7 +5,6 @@ import chalk from 'chalk';
 import axios from 'axios';
 import { Moon } from "lunarphase-js";
 
-
 function getZodiacSign(day, month) {
   const dateStr = `${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
   return ZODIAC_SIGNS.find(z => dateStr >= z.start && dateStr <= z.end);
@@ -33,6 +32,17 @@ function calculateAge(birthDate) {
   return age;
 }
 
+function getSeason(month) {
+  if (month >= 3 && month <= 5) {
+    return 'Spring';
+  } else if (month >= 6 && month <= 8) {
+    return 'Summer';
+  } else if (month >= 9 && month <= 11) {
+    return 'Autumn';
+  } else {
+    return 'Winter';
+  }
+}
 function getNextBirthday(birthDate) {
   const today = new Date();
   const nextBirthday = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
@@ -90,6 +100,7 @@ async function displayResults(date, birthDate) {
   const historicalEvents = await getHistoricalEvents(birthDate);
   const birthstone = BIRTHSTONES[birthDate.getMonth()];
   const birthFlower = BIRTH_FLOWERS[birthDate.getMonth()];
+  const season = getSeason(birthDate.getMonth() + 1);
 
   console.log(chalk.bold.blue('\n🎂 Birthday Insights 🎂'));
   console.log('━'.repeat(50));
@@ -99,7 +110,7 @@ async function displayResults(date, birthDate) {
   console.log(chalk.green('📆 Day of the Week: '), chalk.yellow(dayOfWeek));
   console.log(chalk.green('🎈 Age: '), chalk.yellow(age));
   console.log(chalk.green('🌍 Day of the Year: '), chalk.yellow(dayOfYear));
-
+  console.log(chalk.green('🍂 Season of Birth: '), chalk.yellow(season));
   // Next Birthday
   console.log(chalk.green('🎉 Days until next birthday: '), chalk.yellow(nextBirthday.daysUntil));
 
