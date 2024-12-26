@@ -8,7 +8,7 @@
 
 - 🗓️ **Day of Birth**: Find the exact day of the week you were born.
 - ♒ **Zodiac Sign**: Get your astrological zodiac sign.
-- 💡 **Age**: G.
+- 💡 **Age**: Get your current age.
 
 ---
 
@@ -24,7 +24,7 @@ npm install -g born2day
 
 ## Usage
 
-Simply use the `born2day` command followed by your birth date in `YYYY-MM-DD` format:
+Simply use the `born2day` command followed by your birth date in `DD/MM/YYYY` format:
 
 ```bash
 born2day 16/07/1990
@@ -39,20 +39,6 @@ born2day 16/07/1990
 📌 Day of the Week: Sunday
 ♋ Zodiac Sign: Cancer
 ```
-
----
-
-## Options
-
-You can customize the output with the following options:
-
-```bash
-born2day [options] <date>
-```
-
-### Available Options:
-- `-h, --help`: Display help information.
-- `-v, --version`: Display the current version of the package.
 
 ---
 
