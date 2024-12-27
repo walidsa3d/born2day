@@ -1,0 +1,46 @@
+# Ignore development and testing files
+tests/
+coverage/
+*.test.js
+*.spec.js
+
+# Ignore build tools and configurations
+.babelrc
+.eslintrc.js
+.prettierrc
+webpack.config.js
+rollup.config.js
+
+# Ignore CI/CD and version control files
+.git/
+.gitignore
+.github/
+.travis.yml
+.circleci/
+
+# Ignore local development files
+node_modules/
+dist/                  # If you build to a dist folder, exclude it unless it's the final output
+*.log
+.npmrc
+
+# Ignore example files (optional, if you don’t want to publish them)
+examples/
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignore lock files (optional, depending on your use case)
+package-lock.json
+yarn.lock
+
+# Ignore documentation files (optional, if you don’t want to publish them)
+CHANGELOG.md
+CONTRIBUTING.md
