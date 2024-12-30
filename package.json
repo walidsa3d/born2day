@@ -2,10 +2,10 @@
   "name": "born2day",
   "version": "0.4.1",
   "description": "A CLI tool that provides comprehensive birthday insights including zodiac signs, historical events, and famous people",
-  "main": "dist/index.js",
+  "main": "dist/cli.js",
   "type": "module",
   "bin": {
-    "born2day": "./dist/index.js"
+    "born2day": "./dist/cli.js"
   },
   "scripts": {
     "start": "node dist/index.js",
@@ -14,7 +14,7 @@
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "prepare": "npm run build",
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [
     "birthday",
@@ -38,11 +38,5 @@
     "@babel/preset-env": "^7.26.0",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "testEnvironment": "node"
   }
 }
